@@ -1,0 +1,19 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>
+        Rede de Apoio
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-button expand="block" (click)="getUserLocation()">Obter Localização</ion-button>
+  
+    <ion-list>
+      <ion-item *ngFor="let shelter of shelters">
+        <ion-label>{{ shelter.name }}</ion-label>
+        <ion-label>{{ calculateDistance(userLocation.latitude, userLocation.longitude, shelter.location.latitude, shelter.location.longitude) }} km</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+  
